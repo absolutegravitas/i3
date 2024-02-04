@@ -407,13 +407,13 @@ exec --no-startup-id dex --autostart --environment i3
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
 exec --no-startup-id ~/.screenlayout/laptoponly.sh
 # 
-bindsym $mod+Ctrl+Shift+O exec --no-startup-id ~/.screenlayout/homeoffice.sh
-bindsym $mod+Ctrl+Shift+H exec --no-startup-id ~/.screenlayout/laptoponly.sh
+bindsym $mod+Ctrl+Shift+H exec --no-startup-id ~/.screenlayout/homeoffice.sh
+bindsym $mod+Ctrl+Shift+L exec --no-startup-id ~/.screenlayout/laptoponly.sh
 bindsym $mod+Ctrl+Shift+W exec --no-startup-id ~/.screenlayout/work.sh
 
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
-exec --no-startup-id sleep 1 && feh --bg-fill /home/absolutegravitas/Pictures/archlinux-digital-art-linux-arch-linux-tech-hd-wallpaper.jpg
+exec --no-startup-id sleep 1 && feh --bg-fill /home/absolutegravitas/Pictures/fedora-29-background-wallpaper.jpg
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
@@ -472,6 +472,8 @@ exec --no-startup-id xfce4-clipman
 for_window [class="Yad" instance="yad"] floating enable
 for_window [class="Galculator" instance="galculator"] floating enable
 for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
+for_window [class="signal" instance="signal"] floating enable
+for_window [class="Wfica"] floating enable resize set 1920 px 1080 px
 
 # set floating (nontiling) for special apps
 for_window [class="Xsane" instance="xsane"] floating enable
