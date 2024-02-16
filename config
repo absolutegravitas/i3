@@ -307,6 +307,8 @@ bindsym $mod+Shift+v exec /usr/bin/code
 #bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
 #bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 #bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+bindsym --release $mod+Print exec flameshot gui -p ~/Pictures
+#bindsym --release keycode XXX exec flameshot gui -p ~/Pictures
 
 # Power Profiles menu switcher (rofi)
 bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
@@ -471,15 +473,18 @@ exec --no-startup-id xfce4-clipman
 # set floating (nontiling) for apps needing it
 for_window [class="Yad" instance="yad"] floating enable
 for_window [class="Galculator" instance="galculator"] floating enable
-for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
-for_window [class="signal" instance="signal"] floating enable
+for_window [instance="blueman-manager"] floating enable resize set 800 px 800 px
+for_window [instance="gl"] floating enable resize set 1920 px 1080 px
+
+for_window [instance="signal"] floating enable resize set 600 px 800 px
+for_window [class="pomatez"] floating enable resize set 500 px 600 px
 for_window [class="Wfica"] floating enable resize set 1920 px 1080 px
 
 # set floating (nontiling) for special apps
 for_window [class="Xsane" instance="xsane"] floating enable
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
 for_window [class="qt5ct" instance="qt5ct"] floating enable
-for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
+
 for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
 for_window [class="Pamac-manager"] floating enable
 for_window [window_role="About"] floating enable
