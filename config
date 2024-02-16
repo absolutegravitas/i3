@@ -307,8 +307,7 @@ bindsym $mod+Shift+v exec /usr/bin/code
 #bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
 #bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 #bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
-bindsym --release $mod+Print exec flameshot gui -p ~/Pictures
-#bindsym --release keycode XXX exec flameshot gui -p ~/Pictures
+bindsym --release $mod+Print exec flameshot gui -c
 
 # Power Profiles menu switcher (rofi)
 bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
