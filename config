@@ -24,7 +24,7 @@
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango: Noto Sans Regular 10
 
-# set the mod key to the winkey:
+# set the mod key to the win key:
 set $mod Mod4
 
 #####################
@@ -53,8 +53,8 @@ new_window pixel 1
 hide_edge_borders both
 
 # Set inner/outer gaps
-gaps inner 6
-gaps outer 3
+gaps inner 4
+gaps outer 2
 
 # show window title bars (not officially supported with i3gaps)
 #default_border normal
@@ -172,7 +172,6 @@ bindsym $mod+r mode "resize"
 
 # start a terminal
 bindsym $mod+Return exec xfce4-terminal
-#bindsym $mod+Shift+Ctrl+i exec xfce4-terminal -hold -e sudo nano ~/.config/i3/config
 
 # kill focused window
 bindsym $mod+q kill
@@ -184,7 +183,7 @@ bindsym $mod+Shift+e exec ~/.config/i3/scripts/powermenu
 # lock with a picture:
 #bindsym $mod+l exec i3lock -i  ~/.config/i3/i3-lock-screen.png -p default|win -t
 # lock by blurring the screen:
-bindsym $mod+l exec ~/.config/i3/scripts/blur-lock
+#bindsym $mod+l exec ~/.config/i3/scripts/blur-lock
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -199,18 +198,28 @@ bindsym F1 exec ~/.config/i3/scripts/keyhint-2
 # bindsym $mod+F1 exec xed ~/.config/i3/keybindings
 
 # Backlight control
+# Standard
+# Increase brightness
+ #bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10
 
-# doesn't work
-#bindsym XF86MonBrightnessUp exec xbacklight +10 && notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
-#bindsym XF86MonBrightnessDown exec xbacklight -10 && notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
+# Decrease brightness
+# bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
 
-# Backlight setting using dunst osc
-#bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh brightness_up
-#bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh brightness_down
+# with NVIDIA
+# Increase brightness
+ #bindsym XF86MonBrightnessUp exec sudo bash -c "echo $((`cat /sys/class/backlight/nvidia_wmi_ec_backlight/brightness` + 100)) > /sys/class/backlight/nvidia_wmi_ec_backlight/brightness"
 
-# using brightnessctl
-#bindsym XF86MonBrightnessUp exec brightnessctl s 10%-
-#bindysm XF86MonBrightnessDown exec brightnessctl s 10%+
+# Decrease brightness
+ #bindsym XF86MonBrightnessDown exec sudo bash -c "echo $((`cat /sys/class/backlight/nvidia_wmi_ec_backlight/brightness` - 100)) > /sys/class/backlight/nvidia_wmi_ec_backlight/brightness"
+
+# using light
+
+# Increase brightness
+ #bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10
+
+# Decrease brightness
+ #bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
+
 
 # change focus
 bindsym $mod+j focus left
@@ -248,6 +257,8 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+g layout tabbed
+
+
 #bindsym $mod+Shift+s layout toggle split
 
 # toggle tiling / floating
@@ -414,7 +425,7 @@ bindsym $mod+Ctrl+Shift+W exec --no-startup-id ~/.screenlayout/work.sh
 
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
-exec --no-startup-id sleep 1 && feh --bg-fill /home/absolutegravitas/Pictures/fedora-29-background-wallpaper.jpg
+exec --no-startup-id sleep 1 && feh --bg-fill /home/absolutegravitas/Pictures/archlinux-digital-art-linux-arch-linux-tech-hd-wallpaper.jpg
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
@@ -477,7 +488,7 @@ for_window [instance="gl"] floating enable resize set 1920 px 1080 px
 
 for_window [instance="signal"] floating enable resize set 600 px 800 px
 for_window [class="pomatez"] floating enable resize set 500 px 600 px
-for_window [class="Wfica"] floating enable resize set 1920 px 1080 px
+for_window [class="Wfica"] floating enable resize set 2560 px 1440 px
 
 # set floating (nontiling) for special apps
 for_window [class="Xsane" instance="xsane"] floating enable
