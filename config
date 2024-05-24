@@ -417,10 +417,10 @@ exec --no-startup-id dex --autostart --environment i3
 
 # start a script to setup displays
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
-exec --no-startup-id ~/.screenlayout/laptoponly.sh
+exec --no-startup-id ~/.screenlayout/laptop.sh
 # 
-bindsym $mod+Ctrl+Shift+H exec --no-startup-id ~/.screenlayout/homeoffice.sh
-bindsym $mod+Ctrl+Shift+L exec --no-startup-id ~/.screenlayout/laptoponly.sh
+bindsym $mod+Ctrl+Shift+H exec --no-startup-id ~/.screenlayout/home.sh
+bindsym $mod+Ctrl+Shift+L exec --no-startup-id ~/.screenlayout/laptop.sh
 bindsym $mod+Ctrl+Shift+W exec --no-startup-id ~/.screenlayout/work.sh
 
 # set wallpaper
